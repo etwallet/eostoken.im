@@ -8,6 +8,18 @@
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>EosToken官网-专业的EOS数字资产管家</title>
+    <style type="text/css">
+        #weixin-tip{display:none; position: fixed; left:0; top:0; background: rgba(0,0,0,0.8); filter:alpha(opacity=80); width: 100%; height:100%; z-index: 100;}
+        #weixin-tip p{text-align: center; margin-top: 10%; padding:0 5%; position: relative;}
+        #weixin-tip .close{
+            color: #fff;
+            padding: 5px;
+            font: bold 20px/20px simsun;
+            text-shadow: 0 1px 0 #ddd;
+            position: absolute;
+            top: 0; left: 5%;
+        }
+    </style>
     <link type="image/x-icon" rel="icon" href="images/log_top.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="css/owl.carousel.css" rel="stylesheet">
@@ -188,6 +200,8 @@
     </div>
 </div>
 
+<div id="weixin-tip"><p><img src="images/live_weixin.png" alt="微信打开"/><span id="close" title="关闭" class="close">×</span></p></div>
+
 </body>
 <script>
     $(document).ready(browserRedirect);
@@ -249,5 +263,37 @@
         var mouse = document.getElementById('apple-code')
         mouse.style.display = 'none'
     }
+
+    var is_weixin = (function() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    })();
+    window.onload = function(){
+        var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+        var btn = document.getElementById('download_android');
+        var iosbtn = document.getElementById('download_apple');
+        var tip = document.getElementById('weixin-tip');
+        var close = document.getElementById('close');
+        if(is_weixin){
+            btn.onclick = function(e){
+                tip.style.height = winHeight + 'px';
+                tip.style.display = 'block';
+                return false;
+            }
+            iosbtn.onclick = function(e){
+                tip.style.height = winHeight + 'px';
+                tip.style.display = 'block';
+                return false;
+            }
+            close.onclick = function(){
+                tip.style.display = 'none';
+            }
+        }
+    }
+
 </script>
 </html>
