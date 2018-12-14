@@ -47,6 +47,11 @@
             <img src="../../../assets/img/img_10.png" alt="">
           </a>
         </li>
+        <li>
+        <a href="https://www.spider.store/">
+          <img src="../../../assets/img/img_11.png" alt="">
+        </a>
+        </li>
       </ul>
     </div>
   </swiper-slide>
