@@ -1,9 +1,9 @@
 <template>
   <swiper-slide>
     <div class="img_contain">
-      <a  href="https://oraclechain.io/">
-        <img src="../../../assets/img/img_1.png" alt="">
-      </a>
+      <!--<a  href="https://oraclechain.io/">-->
+        <!--<img src="../../../assets/img/img_1.png" alt="">-->
+      <!--</a>-->
       <a href="https://eospark.com/">
         <img src="../../../assets/img/img_3.png" alt="">
       </a>
@@ -31,6 +31,10 @@
       <a href="https://www.spider.store/">
         <img src="../../../assets/img/img_11.png" alt="">
       </a>
+      <a href="https://www.qkl123.com/">
+        <img src="../../../assets/img/img_12.png" alt="">
+      </a>
+
     </div>
   </swiper-slide>
 </template>

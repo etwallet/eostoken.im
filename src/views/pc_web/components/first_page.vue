@@ -7,6 +7,7 @@
         <!--<a href="https://www.github.com/eostoken" class="open_address">{{get_txt.source_address}}</a>-->
         <a class="down_token">{{get_txt.down_address}}</a>
       </div>
+
       <div class="btn_contain">
         <span class="btn_img_contain">
           <a href="http://apple.eostoken.im/">
@@ -21,6 +22,7 @@
           <img v-show="show_down_and" class="btn_down" src="../../../assets/img/download_android.png" alt="">
         </span>
       </div>
+      <div style="color: #f00">如果苹果手机不能下载，请把苹果手机系统升级到最新版本</div>
     </div>
   </swiper-slide>
 </template>

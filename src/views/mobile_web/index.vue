@@ -19,6 +19,7 @@
         <img src="../../assets/img/android_btn.png" alt="">
       </a>
     </div>
+          <div style="color: #f00">如果苹果手机不能下载，请把苹果手机系统升级到最新版本</div>
   </swiper-slide>
       <!--<SecondPage></SecondPage>-->
       <ThreePage></ThreePage>

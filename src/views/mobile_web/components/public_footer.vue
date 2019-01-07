@@ -2,22 +2,22 @@
   <div class="footer_contain">
     <img class="down_arror" v-if="homeState !== 6" src="../../../assets/img/down_arror.png" alt="">
     <div class="img_contain">
-      <span>
-        <img src="../../../assets/img/Email.png" alt="">
-      </span>
-      <span>
-        <img src="../../../assets/img/Facebook.png" alt="">
-      </span>
-      <span>
-        <img src="../../../assets/img/Twitter.png" alt="">
-      </span>
-      <span class='WeChat'>
-        <img @click='showQRCode' src="../../../assets/img/WeChat.png" alt="">
-        <img v-show='code'  class='QR_Code' src="../../../assets/img/QR_Code.jpg" alt="">
-      </span>
-      <span>
-        <img src="../../../assets/img/Weibo.png" alt="">
-      </span>
+      <!--<span>-->
+        <!--<img src="../../../assets/img/Email.png" alt="">-->
+      <!--</span>-->
+      <!--<span>-->
+        <!--<img src="../../../assets/img/Facebook.png" alt="">-->
+      <!--</span>-->
+      <!--<span>-->
+        <!--<img src="../../../assets/img/Twitter.png" alt="">-->
+      <!--</span>-->
+      <!--<span class='WeChat'>-->
+        <!--<img @click='showQRCode' src="../../../assets/img/WeChat.png" alt="">-->
+        <!--<img v-show='code'  class='QR_Code' src="../../../assets/img/QR_Code.jpg" alt="">-->
+      <!--</span>-->
+      <!--<span>-->
+        <!--<img src="../../../assets/img/Weibo.png" alt="">-->
+      <!--</span>-->
     </div>
     <p>Copyright  ©  2018  EosToken, All rights reserved</p>
   </div>
