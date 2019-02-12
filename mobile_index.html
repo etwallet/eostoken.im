@@ -46,6 +46,9 @@
                 <a onclick="android()"><img src="images/android_btn.png" alt=""/></a>
               </div>
               <!--<div style="color: rgb(255, 0, 0);">如果苹果手机不能下载，请把苹果手机系统升级到最新版本</div>-->
+              <div>
+                <a onclick="iosappstore()" style="color:#385CE9;font-size: 18px">AppStore下载</a>
+              </div>
             </div>
             <div class="swiper-slide" id="secondPage">
               <p class="top_txt" lang>secondPage_txt_title</p>
@@ -153,6 +156,8 @@
             var ua = navigator.userAgent.toLowerCase();
             if (ua.match(/MicroMessenger/i) == "micromessenger") {
                 this.isWeChat = true;
+                document.getElementById("idWechat").style.display="block";
+                return;
             }else{
                 window.location.href = "itms-services://?action=download-manifest&url=https://apple.g2qzo.cn/images/eostoken20181120.plist"
             }
@@ -162,8 +167,22 @@
             var ua = navigator.userAgent.toLowerCase();
             if (ua.match(/MicroMessenger/i) == "micromessenger") {
                 this.isWeChat = true;
+                document.getElementById("idWechat").style.display="block";
+                return;
             }else{
                 window.location.href = "http://android.eostoken.im/android"
+            }
+        }
+
+        function iosappstore(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            //通过正则表达式匹配ua中是否含有MicroMessenger字符串
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                this.isWeChat = true;
+                document.getElementById("idWechat").style.display="block";
+                return;
+            }else{
+                window.location.href = "https://itunes.apple.com/cn/app/eostoken/id1444575972"
             }
         }
     window.onload = myfun;
@@ -180,7 +199,7 @@
           mySwiper.slideTo(1, 500, false);//切换到第二个slide，速度为0.5秒
         })
         $('.aboutUsPage').click(function(){
-          mySwiper.slideTo(5, 500, false);//切换到第六个slide，速度为0.5秒
+          mySwiper.slideTo(4, 500, false);//切换到第五个slide，速度为0.5秒
         })
         $('.linkPage').click(function(){
           mySwiper.slideTo(5, 500, false);//切换到第六个slide，速度为0.5秒

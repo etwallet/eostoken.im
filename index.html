@@ -39,22 +39,25 @@
                             <!--<a class="down_token" lang>down_address</a>-->
                         </div>
                         <div class="btn_contain">
-                  <span class="btn_img_contain">
-                    <a href="http://apple.eostoken.im/">
-                      <img src="images/ios_btn.png" alt="" class="btn_img" data-type="ios"/>
-                    </a>
-                    <img src="images/download_apple.png" alt="" class="btn_down" style="display: none;"/>
-                  </span>
                             <span class="btn_img_contain">
-                    <a href="http://android.eostoken.im/android">
-                      <img src="images/android_btn.png" alt="" class="btn_img" data-type="android"/>
-                    </a>
-                    <img src="images/download_android.png" alt="" class="btn_down" style="display: none;"/>
-                  </span>
+                                <a href="http://apple.eostoken.im/">
+                                    <img src="images/ios_btn.png" alt="" class="btn_img" data-type="ios"/>
+                                </a>
+                                <img src="images/download_apple.png" alt="" class="btn_down" style="display: none;"/>
+                            </span>
+                            <span class="btn_img_contain">
+                                <a href="http://android.eostoken.im/android">
+                                    <img src="images/android_btn.png" alt="" class="btn_img" data-type="android"/>
+                                </a>
+                                <img src="images/download_android.png" alt="" class="btn_down" style="display: none;"/>
+                            </span>
                         </div>
                         <!--<div style="color: rgb(255, 0, 0);">-->
                         <!--如果苹果手机不能下载，请把苹果手机系统升级到最新版本-->
                         <!--</div>-->
+                        <div>
+                            <a href="https://itunes.apple.com/cn/app/eostoken/id1444575972" style="color:#385CE9;font-size: 18px">AppStore下载</a>
+                        </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -178,9 +181,9 @@
                 <img src="images/Facebook.png" alt="" class="icon_link"/>
                 <img src="images/Twitter.png" alt="" class="icon_link"/>
                 <span class="wechat">
-              <img src="images/Wechat.png" alt="" class="icon_link"/>
-              <img src="images/img_qrcode.jpg" alt="" class="qrcode" style="display: none;"/>
-            </span>
+                    <img src="images/WeChat.png" alt="" class="icon_link"/>
+                    <img src="images/img_qrcode.jpg" alt="" class="qrcode" style="display: none;"/>
+                </span>
                 <img src="images/Weibo.png" alt="" class="icon_link"/>
             </div>
         </div>
@@ -213,6 +216,16 @@
         }
     }
 
+    function iosappstore(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        //通过正则表达式匹配ua中是否含有MicroMessenger字符串
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            this.isWeChat = true;
+        }else{
+            window.location.href = "https://itunes.apple.com/cn/app/eostoken/id1444575972"
+        }
+    }
+
     window.onload = myfun;
     $(function () {
         //初始化swiper
@@ -233,7 +246,7 @@
             $(this).addClass("hover").siblings().removeClass("hover");
         })
         $('.aboutUsPage').click(function () {
-            mySwiper.slideTo(5, 500, false);//切换到第六个slide，速度为0.5秒
+            mySwiper.slideTo(4, 500, false);//切换到第五个slide，速度为0.5秒
             $(this).addClass("hover").siblings().removeClass("hover");
         })
         $('.linkPage').click(function () {
