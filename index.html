@@ -254,6 +254,17 @@
         }
     }
 
+    function androidappstore(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        //通过正则表达式匹配ua中是否含有MicroMessenger字符串
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            this.isWeChat = true;
+            return;
+        }else{
+            window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3993225"
+        }
+    }
+
     window.onload = myfun;
     $(function () {
         //初始化swiper
