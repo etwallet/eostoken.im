@@ -41,13 +41,22 @@
               <p class="page_title" lang>eosToken version</p>
               <img src="images/first_page_main.png" alt="" class="img_main" />
               <!--<div class="link_contain"><span lang>down_address</span></div>-->
-              <div class="btn_contain">
-                <a onclick="iphone()"><img src="images/ios_btn.png" alt=""/></a>
-                <a onclick="android()"><img src="images/android_btn.png" alt=""/></a>
+              <!-- pc端 -->
+              <div class="btn_contain" id="pcand" style="display: none;">
+                <span class="btn_img_contain">
+                  <img src="images/download.png" alt="" class="btn_aown_img" data-type="download"/>
+                  <img src="images/123.png" alt="" class="btn_down" style="display: none;"/>
+                </span>
               </div>
-              <!--<div style="color: rgb(255, 0, 0);">如果苹果手机不能下载，请把苹果手机系统升级到最新版本</div>-->
-              <div>
-                <a onclick="iosappstore()" style="color:#385CE9;font-size: 18px">AppStore下载</a>
+              <!-- iOS -->
+              <div class="btn_contain" id="iosand" style="display: none;"> 
+                <a onclick="iosappstore()"><img src="images/appstore_ios_btn.png" alt=""/></a>
+                <a onclick="iphone()"><img src="images/ios_btn.png" alt=""/></a>
+              </div>
+              <!-- android -->
+              <div class="btn_contain" id="androidand" style="display: none;">
+                <a onclick="androidappstore()"><img src="images/appstore_android_btn.png" alt=""/></a>
+                <a onclick="android()"><img src="images/android_btn.png" alt=""/></a>
               </div>
             </div>
             <div class="swiper-slide" id="secondPage">
@@ -145,6 +154,19 @@
     <script type="text/javascript" src="js/swiper.min.js"></script>
     <script type="text/javascript" src="js/languageChange.js"></script>
     <script>
+      $(function(){
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+          $("#androidand").show();
+        }else if(isiOS){
+          $("#iosand").show();
+        }else{
+          $("#pcand").show();
+        }
+      });
+
         function myfun() 　　{ 　　 
           // 　if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) document.body.classList.add('mobile');
      
@@ -185,6 +207,19 @@
                 window.location.href = "https://itunes.apple.com/cn/app/eostoken/id1444575972"
             }
         }
+
+        function androidappstore(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            //通过正则表达式匹配ua中是否含有MicroMessenger字符串
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                this.isWeChat = true;
+                document.getElementById("idWechat").style.display="block";
+                return;
+            }else{
+                window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3993225"
+            }
+        }
+
     window.onload = myfun;
       $(function(){
         //初始化swiper

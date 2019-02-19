@@ -35,28 +35,43 @@
                     <div class="first_page">
                         <p class="page_title" lang>eosToken version</p>
                         <img src="images/first_page_main.png" alt="" class="main_img"/>
-                        <div class="link_contain">
-                            <!--<a class="down_token" lang>down_address</a>-->
+                        <!-- <div class="link_contain">
+                            <a class="down_token" lang>down_address</a>
+                        </div> -->
+                        <!-- pc端 -->
+                        <div class="btn_contain" id="pcand" style="display: none;">
+                            <span class="btn_img_contain">
+                                <img src="images/download.png" alt="" class="btn_aown_img" data-type="download"/>
+                                <img src="images/123.png" alt="" class="btn_down" style="display: none;"/>
+                            </span>
                         </div>
-                        <div class="btn_contain">
+
+                        <!-- iOS -->
+                        <div class="btn_contain" id="iosand" style="display: none;">
+                            <span class="btn_img_contain">
+                                <a href="https://itunes.apple.com/cn/app/eostoken/id1444575972">
+                                    <img src="images/appstore_ios_btn.png" alt="" class="btn_img"/>
+                                </a>
+                            </span>
                             <span class="btn_img_contain">
                                 <a href="http://apple.eostoken.im/">
-                                    <img src="images/ios_btn.png" alt="" class="btn_img" data-type="ios"/>
+                                    <img src="images/ios_btn.png" alt="" class="btn_img"/>
                                 </a>
-                                <img src="images/download_apple.png" alt="" class="btn_down" style="display: none;"/>
+                            </span>
+                        </div>
+
+                        <!-- android -->
+                        <div class="btn_contain" id="androidand" style="display: none;">
+                            <span class="btn_img_contain">
+                                <a href="http://zhushou.360.cn/detail/index/soft_id/3993225">
+                                    <img src="images/appstore_android_btn.png" alt="" class="btn_img" />
+                                </a>
                             </span>
                             <span class="btn_img_contain">
                                 <a href="http://android.eostoken.im/android">
-                                    <img src="images/android_btn.png" alt="" class="btn_img" data-type="android"/>
+                                    <img src="images/android_btn.png" alt="" class="btn_img" />
                                 </a>
-                                <img src="images/download_android.png" alt="" class="btn_down" style="display: none;"/>
                             </span>
-                        </div>
-                        <!--<div style="color: rgb(255, 0, 0);">-->
-                        <!--如果苹果手机不能下载，请把苹果手机系统升级到最新版本-->
-                        <!--</div>-->
-                        <div>
-                            <a href="https://itunes.apple.com/cn/app/eostoken/id1444575972" style="color:#385CE9;font-size: 18px">AppStore下载</a>
                         </div>
                     </div>
                 </div>
@@ -193,6 +208,19 @@
 <script type="text/javascript" src="js/swiper.min.js"></script>
 <script type="text/javascript" src="js/languageChange.js"></script>
 <script>
+    $(function(){
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            $("#androidand").show();
+        }else if(isiOS){
+            $("#iosand").show();
+        }else{
+            $("#pcand").show();
+        }
+    });
+
     function myfun() {
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
             window.location.href = "mobile_index.html";
@@ -254,22 +282,9 @@
             $(this).addClass("hover").siblings().removeClass("hover");
         })
 
-        //显示隐藏下载二维码
-        $(".btn_img").hover(function () {
-            var _thisType = $(this).attr("data-type");
-            if (_thisType == "ios") {
-                $(this).attr("src", "images/hover_ios_btn.png");
-            } else if (_thisType == "android") {
-                $(this).attr("src", "images/hover_android_btn.png");
-            }
+        $(".btn_aown_img").hover(function () {
             $(this).parents(".btn_img_contain").find(".btn_down").show();
         }, function () {
-            var _thisType = $(this).attr("data-type");
-            if (_thisType == "ios") {
-                $(this).attr("src", "images/ios_btn.png");
-            } else if (_thisType == "android") {
-                $(this).attr("src", "images/android_btn.png");
-            }
             $(this).parents(".btn_img_contain").find(".btn_down").hide();
         })
 

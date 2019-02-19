@@ -199,6 +199,12 @@
 	margin-left: 1vw
 }
 
+.swiper-slide .first_page .btn_contain img.btn_aown_img {
+	cursor: pointer;
+	width: 3rem;
+	height: 1.3rem;
+}
+
 .swiper-slide .first_page .btn_contain img.btn_img:first-child {
 	margin: 0
 }
