@@ -140,9 +140,11 @@
             Copyright © 2018 EosToken, All rights reserved
           </p>
         </div>
-        <div class="app_down_div_tip" style="display: none;">
+        <div class="app_down_div_tip" id="idWechat">
           <br />
-          <p class="p"><img src="" /></p>
+          <p class="p">
+            <img src="images/to_browser.png" />
+          </p>
           <br /><br /><br /><br /><br />
           <p class="p1">ETWallet</p>
           <p class="p2">请点击右上角在<span>浏览器</span>打开该页面</p>
@@ -175,17 +177,17 @@
       function iphone(){
           var ua = navigator.userAgent.toLowerCase();
           if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            this.isWeChat = true;
+            document.getElementById("idWechat").style.display="block";
             return;
           }else{
-              window.location.href = "itms-services://?action=download-manifest&url=https://apple.g2qzo.cn/images/eostoken20181120.plist"
+            window.location.href = "itms-services://?action=download-manifest&url=https://apple.g2qzo.cn/images/eostoken20181120.plist"
           }
       }
 
       function android(){
           var ua = navigator.userAgent.toLowerCase();
           if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            this.isWeChat = true;
+            document.getElementById("idWechat").style.display="block";
             return;
           }else{
             window.location.href = "http://android.eostoken.im/android"
@@ -196,7 +198,7 @@
           var ua = window.navigator.userAgent.toLowerCase();
           //通过正则表达式匹配ua中是否含有MicroMessenger字符串
           if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-            this.isWeChat = true;
+            document.getElementById("idWechat").style.display="block";
             return;
           }else{
             window.location.href = "https://itunes.apple.com/cn/app/eostoken/id1444575972"
@@ -207,7 +209,7 @@
           var ua = window.navigator.userAgent.toLowerCase();
           //通过正则表达式匹配ua中是否含有MicroMessenger字符串
           if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-            this.isWeChat = true;
+            document.getElementById("idWechat").style.display="block";
             return;
           }else{
             window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3993225"

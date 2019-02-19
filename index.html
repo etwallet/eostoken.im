@@ -229,7 +229,7 @@
     function iphone() {
         var ua = navigator.userAgent.toLowerCase();
         if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            this.isWeChat = true;
+            document.getElementById("idWechat").style.display="block";
         } else {
             window.location.href = "itms-services://?action=download-manifest&url=https://apple.g2qzo.cn/images/eostoken20181120.plist"
         }
@@ -238,7 +238,7 @@
     function android() {
         var ua = navigator.userAgent.toLowerCase();
         if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            this.isWeChat = true;
+            document.getElementById("idWechat").style.display="block";
         } else {
             window.location.href = "http://android.eostoken.im/android"
         }
@@ -248,7 +248,7 @@
         var ua = window.navigator.userAgent.toLowerCase();
         //通过正则表达式匹配ua中是否含有MicroMessenger字符串
         if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-            this.isWeChat = true;
+            document.getElementById("idWechat").style.display="block";
         }else{
             window.location.href = "https://itunes.apple.com/cn/app/eostoken/id1444575972"
         }
@@ -258,7 +258,7 @@
         var ua = window.navigator.userAgent.toLowerCase();
         //通过正则表达式匹配ua中是否含有MicroMessenger字符串
         if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-            this.isWeChat = true;
+            document.getElementById("idWechat").style.display="block";
             return;
         }else{
             window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3993225"

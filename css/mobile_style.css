@@ -240,7 +240,8 @@
 	width: 100%;
 	height: 100em;
 	opacity: .8;
-	background: #000
+	background: #000;
+	display: none;
 }
 
 .app_down_div_tip .p {
