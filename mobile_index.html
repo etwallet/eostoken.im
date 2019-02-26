@@ -50,8 +50,10 @@
               </div>
               <!-- iOS -->
               <div class="btn_contain" id="iosand" style="display: none;">
-                <a onclick="iphone()"><img src="images/ios_btn.png" alt=""/></a>
-                <a onclick="iosappstore()"><img src="images/appstore_ios_btn.png" alt=""/></a>
+                <a onclick="iphone()" style="display: block;"><img src="images/ios_btn.png" alt=""/></a>
+                <!-- <a onclick="iosappstore()"><img src="images/appstore_ios_btn.png" alt=""/></a> -->
+                <a onclick="iosappstore()" style="display: block;"><img src="images/overseas_ios_btn.png" alt=""/></a>
+                <div style="margin-top: .3rem; color: #999999;">只有大陆Apple ID,<a onclick="Viewtutorial()" style="color: #375AE9">查看教程</a></div>
               </div>
               <!-- android -->
               <div class="btn_contain" id="androidand" style="display: none;">
@@ -201,8 +203,18 @@
             document.getElementById("idWechat").style.display="block";
             return;
           }else{
-//            window.location.href = "https://itunes.apple.com/cn/app/eostoken/id1444575972"
-              window.location.href = "https://w.url.cn/s/AOgjpxI"
+           window.location.href = "https://itunes.apple.com/cn/app/eostoken/id1444575972"
+          }
+      }
+
+      function Viewtutorial(){
+          var ua = window.navigator.userAgent.toLowerCase();
+          //通过正则表达式匹配ua中是否含有MicroMessenger字符串
+          if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            document.getElementById("idWechat").style.display="block";
+            return;
+          }else{
+            window.location.href = "https://w.url.cn/s/AOgjpxI"
           }
       }
 
